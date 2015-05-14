@@ -2,8 +2,11 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var config = require('config');
 var path = require('path');
+var concat = require('gulp-concat');
 var rjs = require('gulp-requirejs');
 var minifyCSS = require('gulp-minify-css');
+
+console.log(config);
 
 // start copy
 gulp.task('copy', function() {
@@ -18,6 +21,7 @@ gulp.task('copy', function() {
 // end copy
 
 
+
 // start min script
 gulp.task('uglify', function() {
   return gulp.src([
@@ -30,11 +34,20 @@ gulp.task('uglify', function() {
 });
 // end min script
 
+// start concat js
+gulp.task('jslib', function() {
+  return gulp.src('../static/js/lib/*.js')
+    .pipe(concat('lib.js'))
+    .pipe(gulp.dest('./dist/'));
+});
+// end concat js
+
+
 // start min style
 gulp.task('cssmin', function () {
   return gulp.src([
     // './static/bower_components/teambition-ui/dist/css/teambition-ui.css',
-    './static/css/libs/jquery/jquery.css'
+    './static/css/lib/jquery/jquery.css'
   ], {
     base: path.join(__dirname, '../static')
   })
