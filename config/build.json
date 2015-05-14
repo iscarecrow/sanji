@@ -1,0 +1,46 @@
+{
+  "css": {
+    "main": "css/a.css",
+    "watchFile": [
+      "css/*.css",
+      "css/base/*.css",
+      "css/core/*.css",
+      "css/components/*.css",
+      "css/page/*.css"
+    ],
+    "concatorder":[
+      "css/base.css",
+      "css/header-2014.css",
+      "css/block-title.css",
+      "css/list-woo.css",
+      "css/list-category.css",
+      "css/list-album.css",
+      "css/list-blog.css",
+      "css/list-people.css",
+      "css/list-comment.css",
+      "css/detail-blog.css",
+      "css/detail-club.css",
+      "css/swipe.css",
+      "css/banner-index.css"
+    ],
+    "dest": "../pkg/css/",
+    "style": "compressed"
+  },
+  "js": {
+    "dest": "../dist/js/",
+    "libSourcemap": true,
+    "lib": [
+      "lib/jquery/jquery-1.10.1.min.js",
+    ],
+    "app": [
+      "modules/vendor/*.js",
+      "modules/common/*.js",
+      "modules/models/*.js",
+      "modules/collections/*.js",
+      "modules/views/*.js",
+      "modules/controller/*.js",
+      "modules/routers/*.js",
+      "modules/main.js"
+    ]
+  }
+}
