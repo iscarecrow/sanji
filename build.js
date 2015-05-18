@@ -1,24 +1,17 @@
+// step one bundle into one file
 ({
-    mainConfigFile : "./static/js/main.js",
-    // appDir: "./",
-    // optimize: "uglify",
-    baseUrl: "./static/js",
-    removeCombined: true,
-    findNestedDependencies: true,
-    dir: "dist",
-    optimize: "none",
-    optimizeCss: "standard",
-    modules: [
-      {name: "main"},
-      // {
-      //   name : "page1"
-      //   exclude: [
-      //     "main"
-      //   ]
-      // }
-    ],
-    paths: {
-        machina: "empty:"
-    },
-    generateSourceMaps: true
+  paths: {
+    jquery: "lib/jquery/jquery-1.10.2",
+    underscore: "lib/underscore/underscore"
+  },
+
+  shim: {
+    underscore: {
+      exports: "_"
+    }
+  },
+  baseUrl: "static/js",
+  name: "main",
+  out: "dist/main.js",
+  removeCombined: true
 })

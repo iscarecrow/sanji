@@ -1,1 +1,7 @@
 node_modules
+static/js/lib/*
+dist
+npm-debug.log
+*.bak
+
+
