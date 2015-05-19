@@ -9,14 +9,15 @@
   optimizeCss: "standard",
   modules: [{
     name: "infrastructure"
-  },
-  {
+  }, {
     name: "main-a",
+    include: ["page/a.js"],
     exclude: [
       "infrastructure"
     ]
-  },{
+  }, {
     name: "main-b",
+    include: ["page/b.js"],
     exclude: [
       "infrastructure"
     ]
@@ -24,5 +25,5 @@
   paths: {
     machina: "empty:"
   },
-  generateSourceMaps: true
+  generateSourceMaps: false
 })

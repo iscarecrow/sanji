@@ -1,5 +1,4 @@
-define(['jquery','swiper'], function($,Swiper) {
-    console.log($);
-    console.log(Swiper);
-    alert('aaa');
+define(['jquery'], function($) {
+  console.log('page-a.js');
+  console.log($);
 });
