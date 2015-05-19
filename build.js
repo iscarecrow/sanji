@@ -3,7 +3,7 @@
   // appDir: "./",
   baseUrl: "static/js",
   removeCombined: true,
-  findNestedDependencies: true,
+  findNestedDependencies: false,
   dir: "dist",
   optimize: "none",
   optimizeCss: "standard",
