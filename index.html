@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gif Stitch</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="static/css/lib/swiper/swiper.min.css">
+    <style type="text/css">
+      .swiper-container {
+        width: 600px;
+        height: 300px;
+      }
+    </style>
 </head>
 <body>
-    <div id="input-form"></div>
-    <div class="gif-list" id="gifs"></div>
-    <script src="js/lib/require.js" data-main="js/main"></script>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <script src="static/js/lib/require/require.js" data-main="static/js/main"></script>
 </body>
 </html>
