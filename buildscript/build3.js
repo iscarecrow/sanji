@@ -8,18 +8,17 @@
   optimize: "none",
   optimizeCss: "standard",
   modules: [{
-    name: "infrastructure"
-  },
-  {
-    name: "main-a",
+    name: "a",
     exclude: [
       "infrastructure"
     ]
   },{
-    name: "main-b",
+    name: "main",
     exclude: [
       "infrastructure"
     ]
+  }, {
+    name: "infrastructure"
   }],
   paths: {
     machina: "empty:"

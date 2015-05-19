@@ -23,8 +23,15 @@ require.config({
 });
 
 // load foundational libs
+// require( [ "infrastructure" ], function () {
+//   require( [ "app" ], function ( app ) {
+//     app.init();
+//   });
+// });
+
 require( [ "infrastructure" ], function () {
-  require( [ "app" ], function ( app ) {
-    app.init();
+  require( [ "a" ], function ( a ) {
+    console.log('infrastructure');
+    a.init();
   });
 });

@@ -1,3 +1,3 @@
 define([
-    "jquery",
+    "backbone",
 ], function() {});
