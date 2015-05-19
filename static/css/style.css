@@ -1,0 +1,11 @@
+@import url('/css/lib/jquery/jquery.css');
+@import url('/css/lib/swiper/swiper.min.css');
+
+#body{
+  background: #000;
+}
+
+.swiper-container {
+  width: 600px;
+  height: 300px;
+}

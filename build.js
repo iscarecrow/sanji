@@ -1,19 +1,22 @@
-// step two bundle into two file
 ({
-  mainConfigFile : "static/js/main.js",
+  mainConfigFile: "static/js/main.js",
+  // appDir: "./",
   baseUrl: "static/js",
   removeCombined: true,
   findNestedDependencies: true,
   dir: "dist",
-  modules: [
-    {
-      name: "main",
-      exclude: [
-        "infrastructure"
-      ]
-    },
-    {
-      name: "infrastructure"
-    }
-  ]
+  optimize: "none",
+  optimizeCss: "standard",
+  modules: [{
+    name: "main",
+    exclude: [
+      "infrastructure"
+    ]
+  }, {
+    name: "infrastructure"
+  }],
+  paths: {
+    machina: "empty:"
+  },
+  generateSourceMaps: true
 })
