@@ -23,7 +23,7 @@ require.config({
 });
 
 // load foundational libs
-require( [ "backbone" ], function () {
+require( [ "infrastructure" ], function () {
   require( [ "app" ], function ( app ) {
     app.init();
   });

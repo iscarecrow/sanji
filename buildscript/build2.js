@@ -9,11 +9,11 @@
     {
       name: "main",
       exclude: [
-        "infrastructure"
+        "backbone",
+        "jquery",
+        "swiper",
+        "underscore"
       ]
-    },
-    {
-      name: "infrastructure"
     }
   ]
 })
