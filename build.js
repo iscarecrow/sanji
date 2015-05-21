@@ -21,6 +21,14 @@
     exclude: [
       "base"
     ]
+  }, {
+    name: "h5-base"
+  }, {
+    name: "h5-main-a",
+    include: ["page/h5-a.js"],
+    exclude: [
+      "h5-base"
+    ]
   }],
   paths: {
     machina: "empty:"

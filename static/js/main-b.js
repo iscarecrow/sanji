@@ -1,4 +1,4 @@
 require( [ "base" ], function () {
-  require( [ "page/b.js" ], function (b) {
+  require( [ "page/h5-b.js" ], function (b) {
   });
 });

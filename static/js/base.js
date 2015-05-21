@@ -1,7 +1,5 @@
 define([
-    "zepto",
-    "zepto.callbacks",
-    "h5pack",
+    "jquery",
 ], function($) {
-  console.log(Zepto);
+  
 });
