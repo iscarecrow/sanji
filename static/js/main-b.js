@@ -1,5 +1,4 @@
-require( [ "infrastructure" ], function () {
+require( [ "base" ], function () {
   require( [ "page/b.js" ], function (b) {
-    console.log('main-b.js');
   });
 });

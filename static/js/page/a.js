@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['zepto'], function($) {
   console.log('page-a.js');
-  console.log($.G);
+  // $('div').anim({ rotate: '720deg', opacity: .5 }, 2, 'ease-out');
 });

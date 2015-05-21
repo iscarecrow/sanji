@@ -8,18 +8,18 @@
   optimize: "none",
   optimizeCss: "standard",
   modules: [{
-    name: "infrastructure"
+    name: "base"
   }, {
     name: "main-a",
     include: ["page/a.js"],
     exclude: [
-      "infrastructure"
+      "base"
     ]
   }, {
     name: "main-b",
     include: ["page/b.js"],
     exclude: [
-      "infrastructure"
+      "base"
     ]
   }],
   paths: {

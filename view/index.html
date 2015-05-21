@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="static/css/lib/swiper/swiper.min.css">
+    <style type="text/css">
+      .swiper-container {
+        width: 600px;
+        height: 300px;
+      }
+    </style>
 </head>
 <body>
-<!-- <script type="text/javascript" src="../dist/js/base.js"></script> -->
-<!-- <script type="text/javascript" src="../dist/js/common.js"></script> -->
-<script src="../static/js/lib/require/require.min.js" data-main="../dist/js/main"></script>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <script src="../static/js/lib/require/require.js" data-main="../dist/main"></script>
+    
 </body>
 </html>
