@@ -54,10 +54,15 @@ gulp.task('build', function(cb) {
     // appDir: 'static',
     mainConfigFile: "static/js/main.js",
     baseUrl: 'static/js',
+    removeCombined: true,
+    findNestedDependencies: false,
+    optimize: "none",
+    optimizeCss: "standard",
     paths: {
       machina: "empty:"
     },
     dir: 'dist',
+    generateSourceMaps: false,
     modules: [{
       name: "base"
     }, {
