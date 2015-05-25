@@ -1,6 +1,6 @@
 /* step one */
-require.config({
-
+requirejs.config({
+  baseUrl: 'static/js',
   paths: {
     backbone   : "lib/backbone/backbone",
     jquery     : "lib/jquery/jquery-1.10.2",
