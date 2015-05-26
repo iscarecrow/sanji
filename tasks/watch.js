@@ -1,8 +1,8 @@
 var gulp = require('gulp');
-var livereload = require('gulp-livereload');
+// var livereload = require('gulp-livereload');
 
 gulp.task('watch', function() {
-  livereload.listen();
-  gulp.watch('src/**/*.less', ['less']);
-  gulp.watch('src/**/*.coffee', ['coffee']);
+  // livereload.listen();
+  gulp.watch('src/**/*.sass', ['sass']);
+  gulp.watch('src/**/*.js', ['babel']);
 });
