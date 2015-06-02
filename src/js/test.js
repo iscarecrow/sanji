@@ -1,24 +1,14 @@
-class Shape {
-    constructor (id, x, y) {
-        this.id = id
-        this.move(x, y)
-    }
-    move (x, y) {
-        this.x = x
-        this.y = y
-    }
+// lib/math.js
+export function sum(x, y) {
+  return x + y;
 }
+export var pi = 3.141593;
 
-class Rectangle extends Shape {
-    constructor (id, x, y, width, height) {
-        super(id, x, y)
-        this.width  = width
-        this.height = height
-    }
-}
-class Circle extends Shape {
-    constructor (id, x, y, radius) {
-        super(id, x, y)
-        this.radius = radius
-    }
-}
+
+// app.js
+import * as math from "lib/math";
+alert("2π = " + math.sum(math.pi, math.pi));
+
+// otherApp.js
+import {sum, pi} from "lib/math";
+alert("2π = " + sum(pi, pi));

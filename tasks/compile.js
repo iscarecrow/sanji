@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
 // var coffee = require('gulp-coffee');
 var babel = require('gulp-babel');
 // var config = require('config');
@@ -12,11 +12,11 @@ var babel = require('gulp-babel');
 //     .pipe(gulp.dest('./static'));
 // });
 
-gulp.task('sass', function() {
-  return gulp.src('./src/**/*.sass')
-    .pipe(sass())
-    .pipe(gulp.dest('./es5'));
-});
+// gulp.task('sass', function() {
+//   return gulp.src('./src/**/*.sass')
+//     .pipe(sass())
+//     .pipe(gulp.dest('./es5'));
+// });
 
 gulp.task('babel', function() {
   return gulp.src('./src/**/*.js')
@@ -24,4 +24,4 @@ gulp.task('babel', function() {
     .pipe(gulp.dest('./es5'));
 });
 
-gulp.task('compile', ['babel','sass']);
+gulp.task('compile', ['babel']);
