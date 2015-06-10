@@ -1,0 +1,12 @@
+[{
+  "name": "h5-base"
+},{
+  "name": "h5-main-getpasswd",
+  "include": ["page/h5-getpasswd.js"],
+  "exclude": ["h5-base"]
+},
+{
+  "name":"h5-main-temaihui-list",
+  "include": ["page/h5-temaihui-list.js"],
+  "exclude": ["h5-base"]
+}]
