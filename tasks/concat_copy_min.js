@@ -51,7 +51,7 @@ gulp.task('cssmin', function() {
 // build start
 gulp.task('build', function(cb) {
   rjs.optimize({
-    // appDir: 'static',
+    // appDir: 'static',qq
     mainConfigFile: "static/js/main.js",
     baseUrl: 'static/js',
     removeCombined: true,
