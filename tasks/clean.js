@@ -4,7 +4,7 @@ var config = require('config');
 
 gulp.task('clean', function() {
   return gulp.src([
-    './dist',
+    './cdn',
   ])
     .pipe(clean());
 });
