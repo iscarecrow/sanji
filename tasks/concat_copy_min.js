@@ -10,16 +10,11 @@ var rjs = require('requirejs');
 
 gulp.task('jshint', function() {
   return gulp.src([
-      'static/js/*.js',
-      'static/js/comm/*.js',
-      'static/js/lib/*.js',
-      'static/js/page/*.js',
-      'static/js/plugin/*.js'
+      'static/**/*.js'
     ])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
-
 
 // start min script
 gulp.task('uglify', function() {
