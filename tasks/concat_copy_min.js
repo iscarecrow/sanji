@@ -36,14 +36,11 @@ gulp.task('uglify', function() {
 
 // start min style
 gulp.task('cssmin', function() {
-    return gulp.src([
-        // './static/bower_components/teambition-ui/dist/css/teambition-ui.css',
-        './static/css/lib/jquery/jquery.css'
-      ], {
-        base: path.join(__dirname, '../static')
-      })
+    return gulp.src(
+        './static/css/**/*.css'
+      )
       .pipe(minifyCSS())
-      .pipe(gulp.dest('./dist'));
+      .pipe(gulp.dest('./dist/css'));
   });
 // end min style
 
