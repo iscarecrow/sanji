@@ -3,5 +3,5 @@ static/js/lib/*
 dist
 npm-debug.log
 *.bak
-
+cdn
 
