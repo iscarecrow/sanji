@@ -26,18 +26,18 @@ gulp.task('rev', ['cleancdn'], function() {
   //   dontGlobal: [/^\/favicon.ico$/, '.bat', '.txt'],
   //   prefix: './view/'
   // });
-  gulp.src('dist/**/*.js')
+  gulp.src(['dist/**/*.js','dist/**/*.css'])
     .pipe(revAll.revision())
-    .pipe(gulp.dest('cdn/dist'))
+    .pipe(gulp.dest('cdn'))
     // .pipe(revAll.versionFile())
     // .pipe(gulp.dest('cdn'))
     .pipe(revAll.manifestFile())
-    .pipe(gulp.dest('cdn/rev/js'));
+    .pipe(gulp.dest('rev'));
 });
 
 gulp.task("revreplace", ['cleancdnview'], function(){
-  var manifest = gulp.src('./cdn/rev/js/rev-manifest.json');
-  return gulp.src("./cdn/**/*.html")
+  var manifest = gulp.src('./rev/rev-manifest.json');
+  return gulp.src("./view/**/*.html")
     .pipe(revReplace({manifest: manifest}))
     .pipe(gulp.dest('cdnview'));
 });

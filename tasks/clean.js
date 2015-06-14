@@ -13,3 +13,8 @@ gulp.task('cleancdn', function() {
   return gulp.src(['./cdn','./rev'],{read: false})
     .pipe(clean());
 });
+
+gulp.task('cleandist', function() {
+  return gulp.src(['./dist'],{read: false})
+    .pipe(clean());
+});
