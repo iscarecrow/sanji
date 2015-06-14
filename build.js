@@ -7,7 +7,6 @@
   dir: "dist",
   optimize: "none",
   optimizeCss: "standard",
-  name: 'almond',
   modules: [{
     name: "base"
   }, {

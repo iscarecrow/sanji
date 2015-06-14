@@ -2,6 +2,7 @@
 requirejs.config({
   baseUrl: 'static/js',
   paths: {
+    almond     : "almond",
     backbone   : "lib/backbone/backbone",
     jquery     : "lib/jquery/jquery-1.10.2",
     swiper     : "lib/swiper/swiper",

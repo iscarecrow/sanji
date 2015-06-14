@@ -1,4 +1,5 @@
 define([
+    "almond",
     "zepto",
     "zepto.callbacks",
     "zepto.deferred",

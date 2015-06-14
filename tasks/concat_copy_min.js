@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var jshint = require('gulp-jshint');
 var rjs = require('requirejs');
-
+var modules = require('../config/modules.json');
 
 gulp.task('jshint', function() {
   return gulp.src([
@@ -55,23 +55,7 @@ gulp.task('build', function(cb) {
     },
     dir: 'dist/js',
     generateSourceMaps: false,
-    modules: [{
-      name: "base"
-    }, {
-      name: "main-a",
-      include: ["page/a.js"],
-      exclude: ["base"]
-    }, {
-      name: "main-b",
-      include: ["page/b.js"],
-      exclude: ["base"]
-    }, {
-      name: "h5-base"
-    }, {
-      name: "h5-main-a",
-      include: ["page/h5-a.js"],
-      exclude: ["h5-base"]
-    }]
+    modules: modules
   }, function(buildResponse) {
     console.log('build response', buildResponse);
     cb();
@@ -81,4 +65,4 @@ gulp.task('build', function(cb) {
 
 
 // gulp.task('min', ['copy', 'cssmin', 'requirejs', 'uglify'])
-gulp.task('default', ['build','rev']);
+gulp.task('default', ['build']);
