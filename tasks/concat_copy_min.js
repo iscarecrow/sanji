@@ -16,20 +16,16 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-// start min script
 gulp.task('uglify', function() {
   return gulp.src([
-      // './static/js/base.js',
-      // './static/js/common.js'
+      'static/**/*.js'
     ], {
       base: path.join(__dirname, '../static/')
     })
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js/'));
 });
-// end min script
 
-// start min style
 gulp.task('cssmin', function() {
     return gulp.src(
         './static/css/**/*.css'
@@ -37,10 +33,7 @@ gulp.task('cssmin', function() {
       .pipe(minifyCSS())
       .pipe(gulp.dest('./dist/css'));
   });
-// end min style
 
-
-// build start
 gulp.task('build', function(cb) {
   rjs.optimize({
     // appDir: './',
@@ -61,7 +54,6 @@ gulp.task('build', function(cb) {
     cb();
   }, cb);
 });
-// build end
 
 
 // gulp.task('min', ['copy', 'cssmin', 'requirejs', 'uglify'])
