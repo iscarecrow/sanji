@@ -58,4 +58,4 @@ gulp.task('cssmin', function() {
 });
 
 // gulp.task('min', ['copy', 'cssmin', 'requirejs', 'uglify'])
-gulp.task('default', ['cleancdn', 'build', 'cssmin']);
+gulp.task('default', ['build', 'cssmin']);

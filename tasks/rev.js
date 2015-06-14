@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 var RevAll = require('gulp-rev-all');
 var revCollector = require('gulp-rev-collector');
-var minifyHTML   = require('gulp-minify-html');
+var revReplace = require("gulp-rev-replace");
+var minifyHTML = require('gulp-minify-html');
 var path = require('path');
 var config = require('config');
 // var pkg = require('../package.json');
@@ -17,39 +18,34 @@ var config = require('config');
 //     .pipe(gulp.dest('.meta/'));
 // });
 
-gulp.task('rev', ['cleancdn'],function() {
-  var revAll = new RevAll({
-    dontRenameFile: ['.html'] ,
-    dontGlobal: [ /^\/favicon.ico$/ ,'.bat','.txt'],  
-    prefix: './view/'
-  });
+gulp.task('rev', ['cleancdn'], function() {
+  var revAll = new RevAll();
 
+  // var revAll = new RevAll({
+  //   dontRenameFile: ['.html'],
+  //   dontGlobal: [/^\/favicon.ico$/, '.bat', '.txt'],
+  //   prefix: './view/'
+  // });
   gulp.src('dist/**/*.js')
     .pipe(revAll.revision())
-    .pipe(gulp.dest('cdn'))
+    .pipe(gulp.dest('cdn/dist'))
     // .pipe(revAll.versionFile())
     // .pipe(gulp.dest('cdn'))
     .pipe(revAll.manifestFile())
-    .pipe(gulp.dest('rev'));
+    .pipe(gulp.dest('cdn/rev/js'));
 });
 
-gulp.task('revCollector', function() {
-  return gulp.src(['rev/**/*.json', 'view/**/*.html'])
-    .pipe(revCollector({
-      replaceReved: true,
-      // dirReplacements: {
-      //   '/dist/css': '/cdn/css',
-      //   '/dist/js/': '/cdn/js/',
-      //   'cdn/': function(manifest_value) {
-      //     return '//cdn' + (Math.floor(Math.random() * 9) + 1) + '.' + 'exsample.dot' + '/img/' + manifest_value;
-      //   }
-      // }
-    }))
-    .pipe(minifyHTML({
-      empty: false,
-      spare: true
-    }))
+gulp.task("revreplace", ['cleancdnview'], function(){
+  var manifest = gulp.src('./cdn/rev/js/rev-manifest.json');
+  return gulp.src("./cdn/**/*.html")
+    .pipe(revReplace({manifest: manifest}))
     .pipe(gulp.dest('cdnview'));
 });
 
-gulp.task('replace', ['clean','revCollector']);
+gulp.task('replace', ['cleancdnview'], function() {
+  return gulp.src(['./cdn/rev/js/rev-manifest.json', './cdn/**/a.html'])
+    .pipe(revCollector({
+      replaceReved: true
+    }))
+    .pipe(gulp.dest('cdnview'));
+});

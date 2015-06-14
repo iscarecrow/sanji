@@ -2,10 +2,10 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 var config = require('config');
 
-gulp.task('clean', function() {
+gulp.task('cleancdnview', function() {
   return gulp.src([
-    './cdnview',
-  ])
+    './cdnview'
+  ],{read:false})
     .pipe(clean());
 });
 
