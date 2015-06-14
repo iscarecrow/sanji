@@ -19,6 +19,11 @@ gulp.task('rev', function () {
     var revAll = new RevAll();
     gulp.src('dist/js/**')
         .pipe(revAll.revision())
+        .pipe(gulp.dest('cdn/js'))
+        .pipe(revAll.revision())
+        .pipe(gulp.dest('cdn/js'))
+        .pipe(revAll.versionFile())
+        .pipe(gulp.dest('cdn/js'))
+        .pipe(revAll.manifestFile())
         .pipe(gulp.dest('cdn/js'));
- 
 });

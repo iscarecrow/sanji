@@ -81,4 +81,4 @@ gulp.task('build', function(cb) {
 
 
 // gulp.task('min', ['copy', 'cssmin', 'requirejs', 'uglify'])
-gulp.task('default', ['build','clean','rev']);
+gulp.task('default', ['build','rev']);
