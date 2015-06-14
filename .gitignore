@@ -4,4 +4,6 @@ dist
 npm-debug.log
 *.bak
 cdn
+cdnview
+rev
 
