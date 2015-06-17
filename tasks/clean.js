@@ -18,3 +18,8 @@ gulp.task('cleandist', function() {
   return gulp.src(['./dist'],{read: false})
     .pipe(clean());
 });
+
+gulp.task('cleanbuildview', function() {
+  return gulp.src(['./dist'],{read: false})
+    .pipe(clean());
+});

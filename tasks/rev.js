@@ -2,7 +2,11 @@ var gulp = require('gulp');
 var RevAll = require('gulp-rev-all');
 var revCollector = require('gulp-rev-collector');
 var revReplace = require("gulp-rev-replace");
-var minifyHTML = require('gulp-minify-html');
+var usemin = require('gulp-usemin');
+var uglify = require('gulp-uglify');
+var minifyHtml = require('gulp-minify-html');
+var minifyCss = require('gulp-minify-css');
+
 var path = require('path');
 var config = require('config');
 // var pkg = require('../package.json');
@@ -34,6 +38,18 @@ gulp.task('rev', ['cleancdn'], function() {
     .pipe(revAll.manifestFile())
     .pipe(gulp.dest('rev'));
 });
+
+
+gulp.task('usemin', ['cleanbuildview'], function () {
+  return gulp.src('./view/**/c.html')
+      .pipe(usemin({
+        // css: [minifyCss(), 'concat'],
+        // html: [minifyHtml({empty: true})],
+        // js: [uglify(), rev()]
+      }))
+      .pipe(gulp.dest('buildview/'));
+});
+
 
 gulp.task("revreplace", ['cleancdnview'], function(){
   var manifest = gulp.src('./rev/rev-manifest.json');
